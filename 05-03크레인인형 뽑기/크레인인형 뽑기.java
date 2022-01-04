@@ -24,7 +24,7 @@ public class Main {
         for(int x=0; x<m; x++){
             for(int i=0; i<n; i++){
                 if(board[i][moves[x]-1] != 0){
-                    if(stack.peek() == board[i][moves[x]-1]){
+                    if(!stack.isEmpty() && stack.peek() == board[i][moves[x]-1]){
                         stack.pop();
                         count += 2;
                     }
