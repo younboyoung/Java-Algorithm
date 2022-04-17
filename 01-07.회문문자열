@@ -1,0 +1,27 @@
+import java.util.*;
+
+public class Main {
+
+    public String solution(String str){
+        String answer = "YES";
+        str = str.toLowerCase();
+        int lt = 0, rt = str.length()-1;
+        while (lt < rt) {
+            if(str.charAt(lt) != str.charAt(rt)) {
+                answer = "NO";
+                return answer;
+            }else {
+                lt++; rt--;
+            }
+        }
+
+        return answer;
+    }
+
+    public static void main(String[] args){
+        Main T = new Main();
+        Scanner kb = new Scanner(System.in);
+        String str = kb.nextLine();
+        System.out.println(T.solution(str));
+    }
+}
