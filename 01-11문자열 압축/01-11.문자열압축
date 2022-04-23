@@ -1,0 +1,44 @@
+package com.company;
+
+import java.util.Scanner;
+
+public class 문자열압축 {
+
+    public String solution(String str){
+        String answer = "";
+        char[] s = str.toCharArray();
+        char tmp = s[0];
+        //answer += s[0];
+        int num = 1;
+        for(int i=1; i<str.length(); i++){
+            if(tmp != s[i]){
+                if(num > 1) {
+                    answer += tmp;
+                    answer += Integer.toString(num);
+                    num = 1;
+                    tmp = s[i];
+                } else {
+                    answer += tmp;
+                    tmp = s[i];
+                }
+            } else {
+                num += 1;
+            }
+
+            if(i == str.length()-1){
+                answer += tmp;
+                if(num > 1) answer += Integer.toString(num);
+            }
+        }
+
+        return answer;
+    }
+
+    public static void main(String[] args){
+        문자열압축 T = new 문자열압축();
+        Scanner kb = new Scanner(System.in);
+        String str = kb.nextLine();
+        System.out.println(T.solution(str));
+
+    }
+}
