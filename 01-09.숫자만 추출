@@ -1,0 +1,19 @@
+package com.company;
+
+import java.util.Scanner;
+
+public class 숫자만추출 {
+
+    public String solution(String str){
+        str = str.toUpperCase().replaceAll("[^0-9]", "");
+        str = Integer.toString(Integer.parseInt(str));
+        return str;
+    }
+
+    public static void main(String[] args){
+        숫자만추출 T = new 숫자만추출();
+        Scanner kb = new Scanner(System.in);
+        String str = kb.nextLine();
+        System.out.println(T.solution(str));
+    }
+}
